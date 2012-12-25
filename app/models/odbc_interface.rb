@@ -10,15 +10,14 @@ class OdbcInterface
 
     def get_data(table_name)
         begin
-        recordset = get_record_set table_name
-        column_names = get_column_names recordset
-        data = nil
+            recordset = get_record_set table_name
+            column_names = get_column_names recordset
             data = recordset.GetRows.transpose
+            recordset.Close if recordset
+            TableModel.new table_name, column_names, data
         rescue Exception => e
             @errors << "#{table_name}"
         end
-        recordset.Close if recordset
-        TableModel.new table_name, column_names, data
     end
 
     def get_all_table_data
@@ -28,7 +27,6 @@ class OdbcInterface
         catalog.tables.each do |t|
             if t.type == "TABLE"
                 table_models << get_data(t.name)
-                p "Fetch complete: #{t.name}"
             end
         end
         table_models
