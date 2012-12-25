@@ -9,16 +9,29 @@ class OdbcInterface
 
 
     def get_data(table_name)
+        begin
         recordset = get_record_set table_name
         column_names = get_column_names recordset
         data = nil
-        begin
             data = recordset.GetRows.transpose
         rescue Exception => e
             @errors << "#{table_name}"
         end
-        recordset.Close
+        recordset.Close if recordset
         TableModel.new table_name, column_names, data
+    end
+
+    def get_all_table_data
+        table_models = []
+        catalog = WIN32OLE.new("ADOX.Catalog")
+        catalog.ActiveConnection = get_connection
+        catalog.tables.each do |t|
+            if t.type == "TABLE"
+                table_models << get_data(t.name)
+                p "Fetch complete: #{t.name}"
+            end
+        end
+        table_models
     end
 
     private
@@ -26,8 +39,9 @@ class OdbcInterface
         @connection ||= open_connection
     end
     def open_connection
-        connection_string =  'Provider=Microsoft.ACE.OLEDB.12.0;Data Source='
+        connection_string =  'Provider=Microsoft.Ace.OLEDB.12.0; Persist Security Info = False;Data Source='
         connection_string << @connection_url
+        connection_string << ';User Id=admin;Password=;'
         connection = WIN32OLE.new('ADODB.Connection')
         connection.Open(connection_string)
         connection
