@@ -1,11 +1,10 @@
 class TableModel
 	attr_reader :column_names, :table_name, :data
 
-	def initialize (table_name, column_names, data)
+	def initialize (table_name, column_names, data = nil)
 		@column_names = column_names
 		@table_name = table_name
 		@data = data
-		p "@data.size: #{@data.size}" unless data.blank?
 	end
 
 	def formatted_column_names
@@ -15,20 +14,27 @@ class TableModel
 		end
 	end
 
-	def data_hash
-		hash_array = {}
-		@data.each_with_index do |data_value, row_index|
-			data_hash = {}
-			data_value.each_with_index do |value, index|
-				data_hash.merge!(@column_names[index].underscore.to_sym => value) 
+	def populate_models
+		begin
+			odbc = OdbcInterface.new APP_CONFIG['database_path']
+			rows = odbc.get_data @table_name
+			p "#{@table_name}:size:#{rows.count}"
+			rows.each do |row|
+				model = model_name.constantize.new
+				column_names.each_with_index do |column_name, index|
+					name = column_name.gsub('fld', '').underscore
+					model.send("#{name}=", row[index])
+				end
+				model.save!
 			end
-			hash_array.merge(row_index => data_hash) unless data_hash.blank?
-		end unless @data.blank?
-		hash_array
+		rescue Exception => e
+			p e.message
+			puts e.backtrace.inspect
+		end
 	end
 
-	def to_model
-		model_name.constantize.new data_hash
+	def to_models
+		model = model_name.constantize.new data_hash.first
 	end
 
 	def model_name
@@ -36,6 +42,6 @@ class TableModel
 	end
 
 	def formatted_table_name
-		@table_name.gsub('dbo_', '').tableize
+		name = @table_name.gsub('dbo_', '').gsub('tbl_', '').tableize
 	end
 end

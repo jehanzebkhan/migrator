@@ -8,15 +8,21 @@ class OdbcInterface
     end
 
 
+    def get_table_models(table_name)
+        table_model = nil
+        recordset = get_record_set table_name
+        column_names = get_column_names recordset
+        recordset.Close if recordset
+        table_model = TableModel.new table_name, column_names
+        table_model
+    end
+
     def get_data(table_name)
         begin
             recordset = get_record_set table_name
-            column_names = get_column_names recordset
-            data = recordset.GetRows.transpose
-            recordset.Close if recordset
-            TableModel.new table_name, column_names, data
+            recordset.GetRows.transpose
         rescue Exception => e
-            @errors << "#{table_name}"
+            @errors << "unable to load data for: #{table_name}"
         end
     end
 
@@ -26,10 +32,14 @@ class OdbcInterface
         catalog.ActiveConnection = get_connection
         catalog.tables.each do |t|
             if t.type == "TABLE"
-                table_models << get_data(t.name)
+                begin
+                    table_models << get_table_models(t.name) if t.name.count('\\') == 0
+                rescue Exception => e
+                    @errors << e.message
+                end
             end
-        end
-        table_models
+        end        
+        table_models.compact
     end
 
     private

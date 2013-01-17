@@ -1,14 +1,12 @@
 class ModelGenerator
 
 	def generate table_models
+		system "rake db:drop db:create db:migrate"
 		table_models.each_with_index do |table_model, index|
 			model_string = "rails generate model #{table_model.model_name} "
 			model_string << add_columns(table_model.column_names)
 			system model_string
-			# system "rake db:migrate db:test:prepare"
-			model_object = table_model.to_model
-			# p "model_object: #{model_object.inspect}"
-			# model_object.save
+			table_model.populate_models
 		end
 	end
 
@@ -22,11 +20,7 @@ class ModelGenerator
 	end
 
 	def name_and_type column_name 
-		if column_name.downcase.end_with? 'id'
-			"#{column_name.underscore}:integer" 
-		else
-			"#{column_name.underscore}:string"
-		end
+		"#{column_name.underscore}:string"
 	end
 
 end
