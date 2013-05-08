@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  contact_point_id: MyText
+  object_state_type_id: MyText
+  address_type_id: MyText
+  post_code_id: MyText
+  code: MyText
+  street1: MyText
+  street2: MyText
+  street3: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+
+two:
+  id: MyText
+  contact_point_id: MyText
+  object_state_type_id: MyText
+  address_type_id: MyText
+  post_code_id: MyText
+  code: MyText
+  street1: MyText
+  street2: MyText
+  street3: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText

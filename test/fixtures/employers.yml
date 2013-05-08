@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  object_state_type_id: MyText
+  file_no: MyText
+  provider_id: MyText
+  employer_type_id: MyText
+  anzic_type_id: MyText
+  contact_point_id: MyText
+  legal_name: MyText
+  trading_name: MyText
+  abn: MyText
+  alert_flag: MyText
+  checked_out_flag: MyText
+  qual_last_updated: MyText
+  comments: MyText
+  private_comments: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  timestamp: MyText
+
+two:
+  id: MyText
+  object_state_type_id: MyText
+  file_no: MyText
+  provider_id: MyText
+  employer_type_id: MyText
+  anzic_type_id: MyText
+  contact_point_id: MyText
+  legal_name: MyText
+  trading_name: MyText
+  abn: MyText
+  alert_flag: MyText
+  checked_out_flag: MyText
+  qual_last_updated: MyText
+  comments: MyText
+  private_comments: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  timestamp: MyText

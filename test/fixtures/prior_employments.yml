@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  employment_id: MyText
+  attendance_type_id: MyText
+  start_date: MyText
+  end_date: MyText
+  hours_per_week: MyText
+
+two:
+  id: MyText
+  employment_id: MyText
+  attendance_type_id: MyText
+  start_date: MyText
+  end_date: MyText
+  hours_per_week: MyText

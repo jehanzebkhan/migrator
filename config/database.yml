@@ -4,7 +4,7 @@ common: &common
 
 development:
   <<: *common
-  database: avms1_development
+  database: avms2_development
   adapter: postgresql
   encoding: unicode
   pool: 25
@@ -12,7 +12,7 @@ development:
 
 test: &test
   <<: *common
-  database: avms1_test
+  database: avms2_test
   adapter: postgresql
   encoding: unicode
   pool: 25

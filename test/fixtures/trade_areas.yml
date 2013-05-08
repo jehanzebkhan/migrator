@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  area_code: MyText
+  description: MyText
+  anta_group_id: MyText
+
+two:
+  id: MyText
+  area_code: MyText
+  description: MyText
+  anta_group_id: MyText

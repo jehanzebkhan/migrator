@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  workplace_employer_id: MyText
+  contact_point_id: MyText
+  workplace_address_id: MyText
+  number_of_employees: MyText
+  number_of_apprentices: MyText
+  number_of_supervisors: MyText
+  employment_arrangement_type_id: MyText
+  award_type_id: MyText
+  employment_training_hours_num: MyText
+  attendance_type_id: MyText
+  prior_employment_with_employer_flag: MyText
+  existing_business_relation_ship_flag: MyText
+  business_relationship: MyText
+  received_common_wealth_incentive_flag: MyText
+  common_wealth_incentive: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  timestamp: MyText
+
+two:
+  id: MyText
+  workplace_employer_id: MyText
+  contact_point_id: MyText
+  workplace_address_id: MyText
+  number_of_employees: MyText
+  number_of_apprentices: MyText
+  number_of_supervisors: MyText
+  employment_arrangement_type_id: MyText
+  award_type_id: MyText
+  employment_training_hours_num: MyText
+  attendance_type_id: MyText
+  prior_employment_with_employer_flag: MyText
+  existing_business_relation_ship_flag: MyText
+  business_relationship: MyText
+  received_common_wealth_incentive_flag: MyText
+  common_wealth_incentive: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  timestamp: MyText

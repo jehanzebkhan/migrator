@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  course_id: MyText
+  business_entity_id: MyText
+  business_entity_role_type_id: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+
+two:
+  id: MyText
+  course_id: MyText
+  business_entity_id: MyText
+  business_entity_role_type_id: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText

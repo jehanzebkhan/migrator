@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  student_id: MyText
+  employer_id: MyText
+  qualification_name: MyText
+  state_type_id: MyText
+  start_year: MyText
+  apprentice_number: MyText
+
+two:
+  id: MyText
+  student_id: MyText
+  employer_id: MyText
+  qualification_name: MyText
+  state_type_id: MyText
+  start_year: MyText
+  apprentice_number: MyText

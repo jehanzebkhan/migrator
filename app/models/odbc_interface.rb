@@ -27,18 +27,20 @@ class OdbcInterface
     end
 
     def get_all_table_data
+        selected_names = ["dbo_Address", "dbo_ApprenticeshipCentre", "dbo_Course", "dbo_CourseBusinessEntity", "dbo_CourseClassification", "dbo_Employer", "dbo_Employment", "dbo_Guardian", "dbo_OperatorTeam", "dbo_PreviousApprenticeship", "dbo_PriorEmployment", "dbo_Qualification", "dbo_QualificationClassification", "dbo_Reason", "dbo_RTO", "dbo_School", "dbo_SchoolLocality", "dbo_SchoolUserView", "dbo_Student", "dbo_StudentQualification", "dbo_TradeArea", "dbo_TrainingContract"]
         table_models = []
         catalog = WIN32OLE.new("ADOX.Catalog")
         catalog.ActiveConnection = get_connection
+        table_names = ''
         catalog.tables.each do |t|
-            if t.type == "TABLE"
+            if t.type == "TABLE" && selected_names.include?(t.name)
                 begin
                     table_models << get_table_models(t.name) if t.name.count('\\') == 0
                 rescue Exception => e
                     @errors << e.message
                 end
             end
-        end        
+        end
         table_models.compact
     end
 

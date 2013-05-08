@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  object_state_type_id: MyText
+  contact_point_id: MyText
+
+two:
+  id: MyText
+  object_state_type_id: MyText
+  contact_point_id: MyText

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  business_entity_id: MyText
+  sta_reference_id: MyText
+  object_state_type_id: MyText
+  rto_status_type_id: MyText
+  rto_type_id: MyText
+  enterprise_flag: MyText
+  code: MyText
+  state_code: MyText
+  initial_register_date: MyText
+  last_register_date: MyText
+  expiry_date: MyText
+  transfer_time_stamp: MyText
+  is_migrated: MyText
+  version: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+
+two:
+  id: MyText
+  business_entity_id: MyText
+  sta_reference_id: MyText
+  object_state_type_id: MyText
+  rto_status_type_id: MyText
+  rto_type_id: MyText
+  enterprise_flag: MyText
+  code: MyText
+  state_code: MyText
+  initial_register_date: MyText
+  last_register_date: MyText
+  expiry_date: MyText
+  transfer_time_stamp: MyText
+  is_migrated: MyText
+  version: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  course_id: MyText
+  classification_id: MyText
+  primary_flag: MyText
+
+two:
+  id: MyText
+  course_id: MyText
+  classification_id: MyText
+  primary_flag: MyText

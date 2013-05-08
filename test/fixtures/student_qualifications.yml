@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  student_id: MyText
+  educational_level_type_id: MyText
+  commenced_date: MyText
+  completed_date: MyText
+
+two:
+  id: MyText
+  student_id: MyText
+  educational_level_type_id: MyText
+  commenced_date: MyText
+  completed_date: MyText

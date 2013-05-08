@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  school_id: MyText
+  post_code_id: MyText
+  timestamp: MyText
+
+two:
+  id: MyText
+  school_id: MyText
+  post_code_id: MyText
+  timestamp: MyText

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  object_state_type_id: MyText
+  training_package_id: MyText
+  qualification_level_type_id: MyText
+  code: MyText
+  name: MyText
+  description: MyText
+  version: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  is_migrated: MyText
+
+two:
+  id: MyText
+  object_state_type_id: MyText
+  training_package_id: MyText
+  qualification_level_type_id: MyText
+  code: MyText
+  name: MyText
+  description: MyText
+  version: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+  is_migrated: MyText

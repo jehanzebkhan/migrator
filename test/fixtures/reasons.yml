@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: MyText
+  reason_type_id: MyText
+  description: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
+
+two:
+  id: MyText
+  reason_type_id: MyText
+  description: MyText
+  last_modified_at: MyText
+  last_modified_by: MyText
